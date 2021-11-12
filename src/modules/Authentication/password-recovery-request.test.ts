@@ -16,7 +16,8 @@ describe('authentication:password recovery requests', () => {
           email: 'fulano@domain.com',
         },
       });
-      expect(resp.statusCode).toEqual(204);
+      expect(resp.statusCode).toEqual(200);
+      expect(JSON.parse(resp.body)).toHaveProperty('hash');
       const [emails] = await trx('password_definition_requests')
         .select('consumed')
         .where({ user_id: userId, consumed: false });

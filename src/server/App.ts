@@ -1,5 +1,4 @@
 import fastify, { FastifyInstance } from 'fastify';
-import '../shared/libs/aws';
 import { errorHandler, schemaErrorFormatter } from '../shared/error';
 import { processSchema } from '../shared/fastify';
 import { routes as authenticationRoutes } from '../modules/Authentication';
